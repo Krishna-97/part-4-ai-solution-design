@@ -12,17 +12,17 @@
   * **Account Holders / End Customers:** Retail and commercial banking clients who require secure, uninterrupted payment processing.
   * **Executive Leadership (CISO/CRO):** Stakeholders focused on mitigating direct capital fraud losses, maintaining regulatory compliance (AML/KYC), and preserving brand trust.
 * **What is the current manual or traditional process?**
-  The legacy infrastructure relies on rigid, static, rule-based systems (e.g., triggering a flag if a transaction exceeds $10,000 or originates from a different country). [cite_start]Flagged cases are funneled into a massive queue where internal risk analysts must manually review transaction histories, contact customers, or review documents to clear or confirm fraud.
+  The legacy infrastructure relies on rigid, static, rule-based systems (e.g., triggering a flag if a transaction exceeds $10,000 or originates from a different country).Flagged cases are funneled into a massive queue where internal risk analysts must manually review transaction histories, contact customers, or review documents to clear or confirm fraud.
 * **What are the limitations of the current process?**
   * **High False Positive Rates:** Legacy rule engines look at transactions in isolation, failing to adapt to fluid behavioral profiles. This blocks legitimate users and floods the analyst queue with false alarms.
-  * [cite_start]**Operational Backlogs:** As transaction volumes scale, human teams become operational bottlenecks, leading to ballooning manual processing hours and severe resolution delays.
+  * **Operational Backlogs:** As transaction volumes scale, human teams become operational bottlenecks, leading to ballooning manual processing hours and severe resolution delays.
   * **Latency Issues:** Rule-based queries are computationally slow and often run as batch processes post-transaction, meaning fraudsters can drain accounts before an alert is even generated.
 
 ---
 
 ## Task 3: Identify the AI Task Type
 * **AI Task Type:** **Anomaly Detection & Binary Classification** 
-* **Suitability Justification:** Financial fraud is an inherently imbalanced data problem where fraudulent transactions typically make up less than 0.1% of the total volume. Standard supervised learning models struggle when trained on such skewed datasets. Anomaly detection models solve this by learning the complex, multi-dimensional boundary of what constitutes a "normal" transaction pattern for a user. Anything deviating from this baseline is flagged. [cite_start]Once a true anomaly is identified, a downstream binary classification head evaluates the specific vector to output a precise probability score representing the likelihood of active fraud.
+* **Suitability Justification:** Financial fraud is an inherently imbalanced data problem where fraudulent transactions typically make up less than 0.1% of the total volume. Standard supervised learning models struggle when trained on such skewed datasets. Anomaly detection models solve this by learning the complex, multi-dimensional boundary of what constitutes a "normal" transaction pattern for a user. Anything deviating from this baseline is flagged.Once a true anomaly is identified, a downstream binary classification head evaluates the specific vector to output a precise probability score representing the likelihood of active fraud.
 
 ---
 
@@ -79,7 +79,7 @@
 
 | Section | Specifications |
 | :--- | :--- |
-| **Problem** | Static rule-based tracking engines let complex fraud bypass networks while causing massive operational backlogs (averaging over 450 manual processing hours/month) and disrupting legitimate users[cite: 1, 3]. |
+| **Problem** | Static rule-based tracking engines let complex fraud bypass networks while causing massive operational backlogs (averaging over 450 manual processing hours/month) and disrupting legitimate users. |
 | **Proposed AI Solution** | An automated, end-to-end transaction anomaly platform that ingests real-time streaming ledger actions to intercept fraudulent requests prior to settlement. |
 | **Required Data** | Structured, tokenized event logs including time, amount, location parameters, and historical user velocity metrics. |
 | **Model Recommendation** | Deep Autoencoder architecture with an integrated Binary Classification output head. |
